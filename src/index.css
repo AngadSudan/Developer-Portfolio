@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Yatra+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bbf7d0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}
+
+* {
+  font-family: "Yatra One", "Great Vibes", cursive;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1f2937;
+  color: #fff;
+}

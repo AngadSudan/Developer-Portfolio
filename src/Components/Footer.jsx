@@ -1,9 +1,11 @@
+import emailjs from "emailjs-com";
 import React from "react";
 import { World } from "./ui/globe";
 import { SendHorizonal } from "lucide-react";
 import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
+import configure from "../conf/conf.js";
 
 function Footer() {
   const globeConfig = {
@@ -391,7 +393,27 @@ function Footer() {
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
   ];
-
+  const [email, setEmail] = React.useState("");
+  const sendEmailjsReq = () => {
+    emailjs
+      .send(
+        configure.service,
+        configure.template,
+        {
+          to_email: "angadsudan453@gmail.com",
+          from_name: "web_portfolio_visitor",
+          message: "Hello, this is email tried contacting you!" + email,
+        },
+        configure.userid
+      )
+      .then((response) => {
+        setEmail("");
+        console.log("Email sent successfully!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.error("Failed to send email. Error:", err);
+      });
+  };
   return (
     <div className="min-h-[30rem] flex flex-col md:flex-row">
       <div className="mx-auto w-4/5 md:w-4/5 lg:w-3/5 pl-8 lg:pl-24 flex flex-col items-center md:items-start">
@@ -427,10 +449,15 @@ function Footer() {
         <div className="mt-4 lg:mt-8 flex justify-center md:justify-start w-full">
           <input
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="angadsudan453@gmail.com"
             className="bg-white text-black rounded-l-full p-3 w-4/5 lg:w-[22rem]"
           />
-          <button className="bg-green-500 rounded-r-full w-16 lg:w-20 flex justify-center items-center">
+          <button
+            onClick={sendEmailjsReq}
+            className="bg-green-500 rounded-r-full w-16 lg:w-20 flex justify-center items-center"
+          >
             <SendHorizonal size={30} className="text-white" />
           </button>
         </div>

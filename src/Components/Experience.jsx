@@ -27,7 +27,7 @@ function Experience() {
   // ];
   const data = [
     {
-      title: "2024",
+      title: "September 2024",
       content: (
         <ExperienceCard
           logo="https://ieee.chitkara.edu.in/img/ieee.png"
@@ -42,16 +42,28 @@ function Experience() {
       ),
     },
     {
-      title: "2023",
+      title: "September 2024",
       content: (
         <ExperienceCard
-          logo="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-          Position="Frontend Developer"
-          Organisation="React Community"
-          Timeline="June 2023 - August 2024"
+          logo="https://avatars.githubusercontent.com/u/110965119?s=200&v=4"
+          Position="Web Team member"
+          Organisation="Open Source Chandigarh"
+          Timeline="September 2024 - Present"
+          Pointers={["developed web interface for the communities website"]}
+        />
+      ),
+    },
+    {
+      title: "June 2024",
+      content: (
+        <ExperienceCard
+          logo="https://imgs.search.brave.com/HuEsrvf-wlyh44RjQV_TKGj0Cxon4dCl_93DG_Z-URk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtdjIuc2NhbGVy/LmNvbS9hc3NldHMv/c3VjY2Vzc19zdG9y/aWVzL3N2Zy9sb2dv/LTMxODZkMDdjNmUw/OWE1YWRmNDAxMDI1/MTg4MTJlNTc0NmQ4/NDc2ODI5ZjI3NjQ5/M2ViZjljYTQwMzUw/YzY3ODcuc3ZnLmd6"
+          Position="Student Intern"
+          Organisation="Scaler School of Technolog"
+          Timeline="June 2024 - September 2024"
           Pointers={[
-            "Developed reusable components for the community project",
-            "Contributed to the React documentation and tutorials",
+            "Learned and applied Social Media Marketing strategies, optimizing a newly created LinkedIn account",
+            "Designed a no-code website using WixStudio, integrating a chat-bot via Tawk.to, resulting in visitor engagement ",
           ]}
         />
       ),

@@ -1,49 +1,37 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import src from "../public/IdentityCard.jpg";
+
 function Projects() {
   const data = [
     {
-      name: "Project 1",
-      description: "Description 1",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
+      name: "Daksh",
+      description:
+        "Daksh is an all-in-one platform designed to enhance the academic experience by providing solution for managing study materials and facilitating seamless communication between students and teachers.",
+      runningLink: "https://daksh-git-main-angadsudans-projects.vercel.app/",
+      codeLink: "https://github.com/AngadSudan/Daksha",
+      tags: ["#mern", "#genAI"],
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735636860/i9nvabfe0igwpwqebkrl.png",
     },
     {
-      name: "Project 2",
-      description: "Description 2",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
+      name: "Hack With Her",
+      description:
+        "The all in one information platform regarding the HackWithHer hackathon organized by IEEE-CIET. generate me a description for project daksh",
+      runningLink: "https://hack-with-her.in/",
+      codeLink: "https://github.com/Soham2395/HackWithHer",
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735637945/pemu90stp7myka9pc71q.png",
+      tags: ["#mern", "#frontend"],
     },
     {
-      name: "Project 3",
-      description: "Description 3",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
-    },
-    {
-      name: "Project 4",
-      description: "Description 4",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
-    },
-    {
-      name: "Project 5",
-      description: "Description 5",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
-    },
-    {
-      name: "Project 6",
-      description: "Description 6",
-      runningLink: "https://www.google.com",
-      codeLink: "https://www.google.com",
-      thumbnail: "#",
+      name: "IEEE Website",
+      description: "Helped in development of the official website of ieee-ciet",
+      runningLink: "https://ieee-website-six.vercel.app/",
+      codeLink: "https://ieee-website-six.vercel.app/",
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735638125/owqol6jkkwjp0efasrrs.png",
+      tags: ["#mern", "#fullstack", "#tailwindcss"],
     },
   ];
   return (
@@ -63,7 +51,8 @@ function Projects() {
               description={project.description}
               runningLink={project.runningLink}
               codeLink={project.codeLink}
-              // thumbnail={src}
+              tags={project.tags}
+              thumbnail={project.thumbnail}
             />
           );
         })}

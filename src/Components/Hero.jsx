@@ -24,19 +24,19 @@ function Hero() {
           {/* Social Icons */}
           <div className="flex mt-4 lg:mt-8 w-full sm:w-3/5 gap-4 sm:gap-6 lg:gap-12 justify-center lg:justify-start">
             <a
-              href="https://www.linkedin.com/in/angad-sudan/"
+              href="www.linkedin.com/in/angadsudan"
               className="text-2xl sm:text-3xl md:text-4xl hover:opacity-80 transition-opacity"
             >
               <FaLinkedin />
             </a>
             <a
-              href="https://www.gitub.com/angadsudan"
+              href="https://github.com/AngadSudan"
               className="text-2xl sm:text-3xl md:text-4xl hover:opacity-80 transition-opacity"
             >
               <FaGithub />
             </a>
             <a
-              href="https://www.leetcode.com/angadsudan/"
+              href="https://leetcode.com/u/Angad_Sudan/"
               className="text-2xl sm:text-3xl md:text-4xl hover:opacity-80 transition-opacity"
             >
               <SiLeetcode />

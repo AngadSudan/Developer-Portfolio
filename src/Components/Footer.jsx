@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
 import configure from "../conf/conf.js";
-
+import { motion } from "framer-motion";
 function Footer() {
   const globeConfig = {
     pointSize: 4,
@@ -416,7 +416,13 @@ function Footer() {
   };
   return (
     <div className="min-h-[30rem] flex flex-col md:flex-row">
-      <div className="mx-auto w-4/5 md:w-4/5 lg:w-3/5 pl-8 lg:pl-24 flex flex-col items-center md:items-start">
+      <motion.div
+        className="mx-auto w-4/5 md:w-4/5 lg:w-3/5 pl-8 lg:pl-24 flex flex-col items-center md:items-start"
+        initial={{ opacity: 0, x: "-100%" }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <h1 className="text-4xl lg:text-6xl text-center md:text-left mt-8 md:mt-16">
           Angad Sudan
         </h1>
@@ -461,7 +467,7 @@ function Footer() {
             <SendHorizonal size={30} className="text-white" />
           </button>
         </div>
-      </div>
+      </motion.div>
       <div className="w-full md:w-2/5lg:block">
         <World data={sampleArcs} globeConfig={globeConfig} />
       </div>

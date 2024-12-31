@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import src from "../public/IdentityCard.jpg";
@@ -34,8 +35,21 @@ function Projects() {
       tags: ["#mern", "#fullstack", "#tailwindcss"],
     },
   ];
+
   return (
-    <div className="w-full min-h-screen p-4">
+    <motion.div
+      className="w-full min-h-screen p-4"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: false,
+        amount: 0.3,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+    >
       <h1 className="text-6xl mb-2 text-green-200 font-bold text-center">
         Projects
       </h1>
@@ -45,19 +59,33 @@ function Projects() {
       <div className="w-fit md:w-[80%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.map((project, index) => {
           return (
-            <ProjectCard
+            <motion.div
               key={index}
-              name={project.name}
-              description={project.description}
-              runningLink={project.runningLink}
-              codeLink={project.codeLink}
-              tags={project.tags}
-              thumbnail={project.thumbnail}
-            />
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: false,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+            >
+              <ProjectCard
+                name={project.name}
+                description={project.description}
+                runningLink={project.runningLink}
+                codeLink={project.codeLink}
+                tags={project.tags}
+                thumbnail={project.thumbnail}
+              />
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

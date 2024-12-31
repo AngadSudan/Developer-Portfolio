@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import TechnologyCard from "./TechnologyCard";
 import {
   SiHtml5,
@@ -12,7 +13,6 @@ import {
   SiMongodb,
   SiPython,
   SiC,
-  // SiJava,
   SiSocketdotio,
   SiTypescript,
   SiPostgresql,
@@ -68,10 +68,6 @@ function Technologies() {
       name: "C",
       image: <SiC className="w-12 h-12 text-[#A8B9CC]" />,
     },
-    // {
-    //   name: "Java",
-    //   image: <SiJava className="w-12 h-12 text-[#007396]" />,
-    // },
     {
       name: "Socket.io",
       image: <SiSocketdotio className="w-12 h-12 text-white" />,
@@ -101,31 +97,62 @@ function Technologies() {
       image: <SiNextdotjs className="w-12 h-12 text-white" />,
     },
   ];
+
   return (
-    <div className="h-fit p-5 lg:p-0 lg:min-h-screen mb-36">
-      {/* Responsive container for technology cards */}
-      <h1 className="lg:hidden text-center text-3xl mb-24">
+    <motion.div
+      className="h-fit p-5 lg:p-0 lg:min-h-screen mb-36"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h1
+        className="lg:hidden text-center text-3xl mb-24"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+      >
         Here's a Recap of What All I Have Used
-      </h1>
-      <div className="grid place-items-center w-4/5 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mx-auto lg:hidden ">
+      </motion.h1>
+
+      <div className="grid place-items-center w-4/5 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mx-auto lg:hidden">
         {technology.map((tech, index) => (
-          <TechnologyCard
-            index={index}
-            image={tech.image}
-            disabled="true"
-            name={tech.name}
-          />
+          <motion.div
+            key={tech.name}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <TechnologyCard
+              index={index}
+              image={tech.image}
+              disabled="true"
+              name={tech.name}
+            />
+          </motion.div>
         ))}
       </div>
 
-      <h1 className="hidden lg:block text-center text-3xl mb-24">
-        Here's a Recap of What All I Have Used
-      </h1>
+      <motion.h1
+        className="hidden lg:block text-center text-3xl mb-24"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+      >
+        Here's All that I Have Used
+      </motion.h1>
 
-      <div className=" hidden lg:flex justify-evenly">
-        {/* Front-end and Back-end container */}
-        <div className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8">
-          {/* Front-end Section */}
+      <div className="hidden lg:flex justify-evenly">
+        <motion.div
+          className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="border-2 border-green-300 rounded-md p-5">
             <h1 className="text-center text-5xl">Front-end</h1>
             <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
@@ -143,43 +170,68 @@ function Technologies() {
                   ].includes(tech.name)
                 ) {
                   return (
-                    <TechnologyCard
-                      index={index}
-                      image={tech.image}
-                      name={tech.name}
-                    />
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <TechnologyCard
+                        index={index}
+                        image={tech.image}
+                        name={tech.name}
+                      />
+                    </motion.div>
                   );
                 }
               })}
             </div>
           </div>
 
-          {/* Back-end Section */}
           <div className="border-2 border-green-300 rounded-md p-5">
             <h1 className="text-center text-5xl">Back-end</h1>
             <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
               {technology.map((tech, index) => {
                 if (["Express", "Node.js", "Socket.io"].includes(tech.name)) {
                   return (
-                    <TechnologyCard
-                      index={index}
-                      image={tech.image}
-                      name={tech.name}
-                    />
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <TechnologyCard
+                        index={index}
+                        image={tech.image}
+                        name={tech.name}
+                      />
+                    </motion.div>
                   );
                 }
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <h1 className="hidden lg:flex text-center mt-64 items-center text-5xl rounded-full h-48 w-48 border-2 border-white">
+        <motion.h1
+          className="hidden lg:flex text-center mt-64 items-center text-5xl rounded-full h-48 w-48 border-2 border-white"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
           Tech Stack
-        </h1>
+        </motion.h1>
 
-        {/* Programming and Database container */}
-        <div className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8">
-          {/* Database Section */}
+        <motion.div
+          className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="border-2 border-green-300 rounded-md p-5">
             <h1 className="text-center text-5xl">Database</h1>
             <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
@@ -190,43 +242,57 @@ function Technologies() {
                   )
                 ) {
                   return (
-                    <TechnologyCard
-                      index={index}
-                      image={tech.image}
-                      name={tech.name}
-                    />
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <TechnologyCard
+                        index={index}
+                        image={tech.image}
+                        name={tech.name}
+                      />
+                    </motion.div>
                   );
                 }
               })}
             </div>
           </div>
 
-          {/* Programming Section */}
           <div className="border-2 border-green-300 rounded-md p-5">
             <h1 className="text-center text-5xl">Programming</h1>
             <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
               {technology.map((tech, index) => {
                 if (
-                  ["Python", "C", "Java", "JavaScript", "TypeScript"].includes(
+                  ["Python", "C", "JavaScript", "TypeScript"].includes(
                     tech.name
                   )
                 ) {
                   return (
-                    <TechnologyCard
-                      index={index}
-                      image={tech.image}
-                      name={tech.name}
-                    />
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <TechnologyCard
+                        index={index}
+                        image={tech.image}
+                        name={tech.name}
+                      />
+                    </motion.div>
                   );
                 }
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default Technologies;
-// will come from left to right as overflow then will be visible all together

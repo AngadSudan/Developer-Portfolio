@@ -42,12 +42,26 @@ export const Timeline = ({ data }) => {
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
+            <motion.div
+              className="relative pl-20 pr-4 md:pl-4 w-full"
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{
+                amount: 0.5,
+                margin: "-100px",
+              }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                bounce: 0.2,
+              }}
+              exit={{ x: 100, opacity: 0 }}
+            >
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
               {item.content}
-            </div>
+            </motion.div>
           </div>
         ))}
         <div

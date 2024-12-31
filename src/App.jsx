@@ -16,7 +16,7 @@ const App = () => {
       <Hero />
       <Technologies />
       <Projects />
-      <Experience />
+      <Experience className="hidden md:block" />
       <Testimonials />
       <Footer />
     </>

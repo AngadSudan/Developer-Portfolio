@@ -60,7 +60,7 @@ function Header() {
       <div
         className={`h-screen w-2/5 ${
           showMenu ? "translate-x-0" : "translate-x-[100%]"
-        } transition-all fixed right-0 top-0 bg-gray-800 text-green-200`}
+        } transition-all fixed z-[9999] right-0 top-0 bg-gray-800 text-green-200`}
       >
         <div>
           <button

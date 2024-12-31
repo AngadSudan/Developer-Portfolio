@@ -11,10 +11,12 @@ function Hero() {
       <div className="w-full md:w-4/5 mx-auto h-[85%] my-auto flex flex-col lg:flex-row gap-8 lg:gap-0">
         {/* Left Section */}
         <div className="w-full lg:w-2/3 flex flex-col justify-center px-4 lg:pl-8">
-          <p className="bg-clip-text text-transparent bg-gradient-to-r from-green-100 to-green-400 text-4xl sm:text-5xl md:text-6xl font-semibold">
+          <p className="bg-clip-text text-center md:text-right text-transparent bg-gradient-to-r from-green-100 to-green-400 text-4xl sm:text-5xl md:text-6xl font-semibold">
             Hi There,
             <br />
-            <span className="my-2 block">I Am Angad</span>
+            <span className=" text-center md:text-right my-2 block">
+              I Am Angad
+            </span>
           </p>
 
           <HeroSection />

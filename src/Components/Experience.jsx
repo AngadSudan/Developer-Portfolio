@@ -2,7 +2,7 @@ import React from "react";
 import ExperienceCard from "./ExperienceCard";
 import { Timeline } from "./ui/timeline";
 
-function Experience() {
+function Experience({ className }) {
   // const data = [
   //   {
   //     logo: "https://ieee.chitkara.edu.in/img/ieee.png",
@@ -70,7 +70,7 @@ function Experience() {
     },
   ];
   return (
-    <div className="my-24 mb-36">
+    <div className={`my-24 mb-36 ${className}`}>
       <h1 className="text-center text-5xl my-12">Experience</h1>
       {/* <div className="w-full overflow-x-hidden mx-auto justify-center flex flex-col md:flex-row">
         {data.map((experience, index) => {

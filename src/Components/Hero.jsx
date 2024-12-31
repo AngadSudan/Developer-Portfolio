@@ -77,7 +77,7 @@ function Hero() {
 
         {/* Right Section - Code Block */}
         <motion.div
-          className="w-full lg:w-[60%] h-auto lg:h-[65%] p-4 my-auto border-2 border-white rounded-lg"
+          className="w-full p-1 lg:w-[60%] h-auto lg:h-[65%] sm:p-4 my-auto border-2 border-white rounded-lg"
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
@@ -89,7 +89,7 @@ function Hero() {
           </div>
 
           <div className="w-full h-fit bg-black p-2 sm:p-3 mt-4 rounded-lg border-2 border-white overflow-x-auto">
-            <pre className="grid place-items-center text-sm sm:text-base">
+            <pre className="hidden md:grid place-items-center text-sm sm:text-base">
               {`{
       name: "Angad Sudan",
       age: "18",
@@ -97,6 +97,22 @@ function Hero() {
       email: "angadsudan453@gmail.com",
       languages: ["English", "Hindi"],
       hobbies: ["Coding", "Reading", "Exploring"],
+      education: {
+        college: "Chitkara University",
+      },
+}`}
+            </pre>
+            <pre className="sm:hidden grid place-items-center text-sm sm:text-base">
+              {`{
+      name: "Angad Sudan",
+      age: "18",
+      location: "India",
+      email: "angadsudan453@gmail.com",
+      languages: ["English", "Hindi"],
+      hobbies: [
+        ["Coding"], 
+        ["Reading"], 
+        ["Exploring"]],
       education: {
         college: "Chitkara University",
       },

@@ -1,132 +1,104 @@
 import React from "react";
 import TechnologyCard from "./TechnologyCard";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiRedux,
+  SiReactrouter,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiPython,
+  SiC,
+  // SiJava,
+  SiSocketdotio,
+  SiTypescript,
+  SiPostgresql,
+  SiMysql,
+  SiPrisma,
+  SiNextdotjs,
+  SiGit,
+} from "react-icons/si";
+
 function Technologies() {
   const technology = [
     {
       name: "HTML",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+      image: <SiHtml5 className="w-12 h-12 text-[#E34F26]" />,
     },
     {
       name: "CSS",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+      image: <SiCss3 className="w-12 h-12 text-[#1572B6]" />,
     },
     {
       name: "JavaScript",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+      image: <SiJavascript className="w-12 h-12 text-[#F7DF1E]" />,
     },
     {
       name: "React",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      image: <SiReact className="w-12 h-12 text-[#61DAFB]" />,
     },
     {
       name: "Redux",
-      image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
-      svgUrl: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
+      image: <SiRedux className="w-12 h-12 text-[#764ABC]" />,
     },
     {
       name: "React Router",
-      image:
-        "https://imgs.search.brave.com/ZqsBpq-K7ayC7UD9xTGYmYU43YZBEF-akrF5oQqYY18/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bHRp/bWF0ZWNvdXJzZXMu/Y29tL2Fzc2V0cy9j/YXRlZ29yeS9yZWFj/dC1yb3V0ZXItOWMw/YmIzNDlhN2NhOGQ2/OTllNGRjZDFlYmNk/ZDIxZGRhNzE5ODQ0/N2RmY2VmOTI4Zjlj/YmIwNzQ4ZTFmMGFk/NS5zdmc",
-      svgUrl:
-        "https://imgs.search.brave.com/ZqsBpq-K7ayC7UD9xTGYmYU43YZBEF-akrF5oQqYY18/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bHRp/bWF0ZWNvdXJzZXMu/Y29tL2Fzc2V0cy9j/YXRlZ29yeS9yZWFj/dC1yb3V0ZXItOWMw/YmIzNDlhN2NhOGQ2/OTllNGRjZDFlYmNk/ZDIxZGRhNzE5ODQ0/N2RmY2VmOTI4Zjlj/YmIwNzQ4ZTFmMGFk/NS5zdmc",
+      image: <SiReactrouter className="w-12 h-12 text-[#CA4245]" />,
     },
     {
       name: "Express",
-      image:
-        "https://imgs.search.brave.com/FfIehN7XKxDIYyYoUlbJyNRktsMDWbuhlvQeMGy65aI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL04vbm9kZWpz/LWxvZ28tRkJFMTIy/RTM3Ny1zZWVrbG9n/by5jb20ucG5n",
-      svgUrl:
-        "https://imgs.search.brave.com/FfIehN7XKxDIYyYoUlbJyNRktsMDWbuhlvQeMGy65aI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL04vbm9kZWpz/LWxvZ28tRkJFMTIy/RTM3Ny1zZWVrbG9n/by5jb20ucG5n",
+      image: <SiExpress className="w-12 h-12 text-white" />,
     },
     {
       name: "Node.js",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      image: <SiNodedotjs className="w-12 h-12 text-[#339933]" />,
     },
     {
       name: "MongoDB",
-      image:
-        "https://imgs.search.brave.com/iIEgRsBD5ZZoPqyXcoYJHh1XDx8Ls9gEQpek8M7LBpo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbHVz/cG5nLmNvbS9pbWct/cG5nL2xvZ28tbW9u/Z29kYi1wbmctbW9u/Z29kYi1sb2dvLXBu/Zy00MDAucG5n",
-      svgUrl:
-        "https://imgs.search.brave.com/iIEgRsBD5ZZoPqyXcoYJHh1XDx8Ls9gEQpek8M7LBpo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbHVz/cG5nLmNvbS9pbWct/cG5nL2xvZ28tbW9u/Z29kYi1wbmctbW9u/Z29kYi1sb2dvLXBu/Zy00MDAucG5n",
+      image: <SiMongodb className="w-12 h-12 text-[#47A248]" />,
     },
     {
       name: "Python",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      image: <SiPython className="w-12 h-12 text-[#3776AB]" />,
     },
     {
       name: "C",
-      image: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
-      svgUrl: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
+      image: <SiC className="w-12 h-12 text-[#A8B9CC]" />,
     },
-    {
-      name: "Java",
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-    },
+    // {
+    //   name: "Java",
+    //   image: <SiJava className="w-12 h-12 text-[#007396]" />,
+    // },
     {
       name: "Socket.io",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+      image: <SiSocketdotio className="w-12 h-12 text-white" />,
     },
     {
       name: "Git",
-      image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+      image: <SiGit className="w-12 h-12 text-[#F05032]" />,
     },
     {
       name: "TypeScript",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      image: <SiTypescript className="w-12 h-12 text-[#3178C6]" />,
     },
     {
       name: "PostgreSQL",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+      image: <SiPostgresql className="w-12 h-12 text-[#4169E1]" />,
     },
     {
       name: "MySQL",
-      image: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
-      svgUrl: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+      image: <SiMysql className="w-12 h-12 text-[#4479A1]" />,
     },
     {
       name: "Prisma",
-      image:
-        "https://imgs.search.brave.com/IQpQ5hToOH-nuCUvl181rHv1qx-b-oWT-xlvtVbwCoU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3ByaXNt/YTIyNDQuanBn",
-      svgUrl:
-        "https://imgs.search.brave.com/IQpQ5hToOH-nuCUvl181rHv1qx-b-oWT-xlvtVbwCoU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3ByaXNt/YTIyNDQuanBn",
+      image: <SiPrisma className="w-12 h-12 text-white" />,
     },
     {
       name: "Next.js",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-      svgUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+      image: <SiNextdotjs className="w-12 h-12 text-white" />,
     },
   ];
   return (

@@ -11,7 +11,7 @@ function Testimonials() {
       githubUrl: "https://github.com/Soham2395",
       linkedinUrl: "https://www.linkedin.com/in/soham-chakraborty-108450255/",
       testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "He's a hardworker and does the match the deadlines. Highly appreciate that part of him.",
     },
     {
       profilePic:

@@ -8,7 +8,7 @@ function ExperienceCard({
   Timeline,
 }) {
   return (
-    <div className="bg-black mx-2 h-fit md:h-[25rem] p-4 rounded-md my-4 md:w-1/3">
+    <div className="bg-black mx-2 h-fit p-4 rounded-md my-4 md:w-2/3">
       <div className="mb-2 p-2 flex justify-between w-full">
         <img src={logo} alt={Organisation} className="w-24 h-24 rounded-full" />
         <div>

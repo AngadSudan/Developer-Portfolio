@@ -1,6 +1,10 @@
 import React from "react";
 import { World } from "./ui/globe";
 import { SendHorizonal } from "lucide-react";
+import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { IoMdMail } from "react-icons/io";
+
 function Footer() {
   const globeConfig = {
     pointSize: 4,
@@ -389,7 +393,7 @@ function Footer() {
   ];
 
   return (
-    <div className="min-h-[30rem] flex flex-wrap">
+    <div className="min-h-[30rem] flex flex-col md:flex-row">
       <div className="mx-auto w-4/5 md:w-4/5 lg:w-3/5 pl-8 lg:pl-24 flex flex-col items-center md:items-start">
         <h1 className="text-4xl lg:text-6xl text-center md:text-left mt-8 md:mt-16">
           Angad Sudan
@@ -398,40 +402,26 @@ function Footer() {
           Let's Connect over Social Media
         </p>
         <div className="flex mt-4 lg:mt-8 w-3/5 md:w-full gap-6 lg:gap-12 justify-center md:justify-start">
-          <a href="https://www.linkedin.com/in/angad-sudan/">
-            <img
-              src="https://img.icons8.com/color/48/000000/linkedin.png"
-              className="h-10 w-10 lg:h-12 lg:w-12"
-              alt="LinkedIn"
-            />
+          <a
+            href="https://www.linkedin.com/in/angad-sudan/"
+            className="text-4xl"
+          >
+            <FaLinkedin />
           </a>
-          <a href="https://www.gitub.com/angadsudan">
-            <img
-              src="https://img.icons8.com/color/48/000000/github--v1.png"
-              className="h-10 w-10 lg:h-12 lg:w-12"
-              alt="GitHub"
-            />
+          <a href="https://www.gitub.com/angadsudan" className="text-4xl">
+            <FaGithub />
           </a>
-          <a href="https://youtu.be/xvFZjo5PgG0?feature=shared">
-            <img
-              src="https://img.icons8.com/color/48/000000/youtube-play.png"
-              className="h-10 w-10 lg:h-12 lg:w-12"
-              alt="YouTube"
-            />
+          <a
+            href="https://youtu.be/xvFZjo5PgG0?feature=shared"
+            className="text-4xl"
+          >
+            <FaYoutube />
           </a>
-          <a href="https://www.leetcode.com/angadsudan/">
-            <img
-              src="https://imgs.search.brave.com/LE-2soOiDqTstSeu2vl_xvjGq6SjFjpTnTTiWZyVV8o/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LWxlZXRjb2RlLWxv/Z28taWNvbi1kb3du/bG9hZC1pbi1zdmct/cG5nLWdpZi1maWxl/LWZvcm1hdHMtLXRl/Y2hub2xvZ3ktc29j/aWFsLW1lZGlhLXZv/bC00LXBhY2stbG9n/b3MtaWNvbnMtMjk0/NDk2MC5wbmc_Zj13/ZWJwJnc9MjU2"
-              className="h-10 w-10 lg:h-12 lg:w-12"
-              alt="LeetCode"
-            />
+          <a href="https://www.leetcode.com/angadsudan/" className="text-4xl">
+            <SiLeetcode />
           </a>
-          <a href="mailto:angadsudan453@gmail.com">
-            <img
-              src="https://imgs.search.brave.com/nLxnR92YLKyc-5zc2rnFRO2c0FH0D3hQ0SD5iFaYC20/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy83/LzdlL0dtYWlsX2lj/b25fKDIwMjApLnN2/Zw"
-              className="h-10 w-10 lg:h-12 lg:w-12"
-              alt="Email"
-            />
+          <a href="mailto:angadsudan453@gmail.com" className="text-4xl">
+            <IoMdMail />
           </a>
         </div>
         <div className="mt-4 lg:mt-8 flex justify-center md:justify-start w-full">
@@ -445,7 +435,7 @@ function Footer() {
           </button>
         </div>
       </div>
-      <div className="w-full md:w-2/5 hidden lg:block">
+      <div className="w-full md:w-2/5lg:block">
         <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>

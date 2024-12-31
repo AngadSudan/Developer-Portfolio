@@ -135,7 +135,7 @@ function Technologies() {
       <h1 className="lg:hidden text-center text-3xl mb-24">
         Here's a Recap of What All I Have Used
       </h1>
-      <div className="grid place-items-center w-4/5 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mx-auto lg:flex lg:overflow-x-scroll ">
+      <div className="grid place-items-center w-4/5 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mx-auto lg:hidden ">
         {technology.map((tech, index) => (
           <TechnologyCard
             index={index}

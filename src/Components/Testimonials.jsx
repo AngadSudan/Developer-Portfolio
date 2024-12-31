@@ -8,6 +8,8 @@ function Testimonials() {
       profilePic: "https://randomuser.me/api/portraits",
       name: "John Doe",
       title: "CEO",
+      githubUrl: "https://github.com",
+      linkedinUrl: "https://linkedin.com",
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -15,6 +17,8 @@ function Testimonials() {
       profilePic: "https://randomuser.me/api/portraits",
       name: "John Doe",
       title: "CEO",
+      githubUrl: "https://github.com",
+      linkedinUrl: "https://linkedin.com",
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -22,6 +26,8 @@ function Testimonials() {
       profilePic: "https://randomuser.me/api/portraits",
       name: "John Doe",
       title: "CEO",
+      githubUrl: "https://github.com",
+      linkedinUrl: "https://linkedin.com",
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -40,6 +46,8 @@ function Testimonials() {
             name={item.name}
             title={item.title}
             testimonial={item.testimonial}
+            githubUrl={item.githubUrl}
+            linkedinUrl={item.linkedinUrl}
           />
         ))}
       </div>

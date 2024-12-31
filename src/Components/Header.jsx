@@ -21,10 +21,10 @@ function Header() {
     },
   ];
   return (
-    <section className=" min-h-fit p-4 bg-gray-800 text-green-200">
+    <section className=" min-h-fit p-4 mt-6 bg-gray-800 text-green-200">
       {/* Bigger Screen View */}
       <div className="md:flex hidden  md:w-[90%] lg:w-3/5 mx-auto justify-between">
-        <h1 className="font-semibold my-auto text-4xl">Angad</h1>
+        <h1 className="font-semibold my-auto text-4xl"> &lt; Angad /&gt; </h1>
         <ul className="flex w-3/5 justify-between">
           {navbarData.map((item, index) => {
             return (

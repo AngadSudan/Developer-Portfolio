@@ -68,7 +68,7 @@ function Projects() {
               }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.1,
+                delay: index * 0.5,
                 ease: "easeOut",
               }}
             >

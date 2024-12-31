@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function TestimonialCard({
+  index,
   profilePic = "https://media.istockphoto.com/id/1303206558/photo/headshot-portrait-of-smiling-businessman-talk-on-video-call.webp?a=1&b=1&s=612x612&w=0&k=20&c=8lmFJ68jo0AB02jBDHswcJjuh_YhQMKEC7nTrtgQ58I=",
   name,
   title,
@@ -16,9 +17,10 @@ function TestimonialCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{
-        duration: 0.5,
+        duration: 0.6,
+        delay: 0.4 * index,
         type: "spring",
-        bounce: 0.2,
+        bounce: 0.6,
       }}
       className="relative p-6 border-2 border-white/20 rounded-xl backdrop-blur-sm bg-slate-900/60 shadow-xl hover:border-white/40 transition-all duration-300"
     >
@@ -30,7 +32,7 @@ function TestimonialCard({
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: false }}
-          transition={{ delay: 0.2, duration: 0.4 }}
+          transition={{ duration: 0.4 }}
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -50,7 +52,7 @@ function TestimonialCard({
           initial={{ x: 20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+          transition={{ duration: 0.4 }}
         >
           <h2 className="font-bold text-xl text-white mb-1">{name}</h2>
           <p className="text-blue-400 text-sm mb-2">{title}</p>
@@ -84,13 +86,7 @@ function TestimonialCard({
         </motion.div>
       </div>
 
-      <motion.div
-        className="relative mt-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ delay: 0.4, duration: 0.4 }}
-      >
+      <motion.div className="relative mt-6">
         <p className="text-white/80 text-center leading-relaxed tracking-wide">
           {testimonial}
         </p>

@@ -247,7 +247,7 @@ function Technologies() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: false }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      transition={{ duration: 0.5, delay: index * 0.3 }}
                     >
                       <TechnologyCard
                         index={index}
@@ -276,7 +276,7 @@ function Technologies() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: false }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
                       <TechnologyCard
                         index={index}

@@ -10,12 +10,7 @@ function Hero() {
     <div className="relative min-h-screen grid place-items-center p-4 mb-24">
       <div className="w-full md:w-4/5 mx-auto h-[85%] my-auto flex flex-col lg:flex-row gap-8 lg:gap-0">
         {/* Left Section */}
-        <motion.div
-          className="w-full lg:w-2/3 flex flex-col justify-center px-4 lg:pl-8"
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        >
+        <div className="w-full lg:w-2/3 flex flex-col justify-center px-4 lg:pl-8">
           <p className="bg-clip-text text-transparent bg-gradient-to-r from-green-100 to-green-400 text-4xl sm:text-5xl md:text-6xl font-semibold">
             Hi There,
             <br />
@@ -73,15 +68,10 @@ function Hero() {
               </a>
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right Section - Code Block */}
-        <motion.div
-          className="w-full p-1 lg:w-[60%] h-auto lg:h-[65%] sm:p-4 my-auto border-2 border-white rounded-lg"
-          initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        >
+        <motion.div className="w-full p-1 lg:w-[60%] h-auto lg:h-[65%] sm:p-4 my-auto border-2 border-white rounded-lg">
           <div className="flex gap-3 flex-row-reverse mr-4 sm:mr-8 mt-2">
             <div className="bg-red-600 rounded-full h-4 sm:h-6 w-4 sm:w-6"></div>
             <div className="bg-yellow-600 rounded-full h-4 sm:h-6 w-4 sm:w-6"></div>

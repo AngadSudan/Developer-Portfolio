@@ -52,6 +52,7 @@ export const Timeline = ({ data }) => {
               }}
               transition={{
                 duration: 0.8,
+                delay: 0.4,
                 type: "spring",
                 bounce: 0.2,
               }}

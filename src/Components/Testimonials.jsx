@@ -17,11 +17,11 @@ function Testimonials() {
       profilePic:
         "https://media.licdn.com/dms/image/v2/D5603AQHJJQu8j0lnnw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1730834243174?e=1741219200&v=beta&t=j64_Ec11n9ckkYkBUmua6vQCda108QVoSbcqrny6eKs",
       name: "Akshat Singla",
-      title: "Team Daksh",
+      title: "Team Member - Team Daksh",
       githubUrl: "https://github.com/Akshat-singla",
       linkedinUrl: "https://www.linkedin.com/in/akshat-singla-b41bbb331/",
       testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "It was great collaborating with him on Daksh. Everything was pre-planned, and well executed. He is a great team player and leader.",
     },
   ];
   return (
@@ -33,7 +33,7 @@ function Testimonials() {
       <div className=" grid mt-20 grid-cols-1 md:grid-cols-3 w-4/5  justify-evenly gap-5 ">
         {data.map((item, index) => (
           <TestimonialCard
-            // key={index}
+            index={index}
             profilePic={item.profilePic}
             name={item.name}
             title={item.title}

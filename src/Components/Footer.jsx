@@ -430,13 +430,10 @@ function Footer() {
           Let's Connect over Social Media
         </p>
         <div className="flex mt-4 lg:mt-8 w-3/5 md:w-full gap-6 lg:gap-12 justify-center md:justify-start">
-          <a
-            href="https://www.linkedin.com/in/angad-sudan/"
-            className="text-4xl"
-          >
+          <a href="https://www.linkedin.com/in/angadsudan" className="text-4xl">
             <FaLinkedin />
           </a>
-          <a href="https://www.gitub.com/angadsudan" className="text-4xl">
+          <a href="https://github.com/AngadSudan" className="text-4xl">
             <FaGithub />
           </a>
           <a
@@ -445,7 +442,7 @@ function Footer() {
           >
             <FaYoutube />
           </a>
-          <a href="https://www.leetcode.com/angadsudan/" className="text-4xl">
+          <a href="https://leetcode.com/u/Angad_Sudan/" className="text-4xl">
             <SiLeetcode />
           </a>
           <a href="mailto:angadsudan453@gmail.com" className="text-4xl">

@@ -43,7 +43,7 @@ const TypewriterEffect = ({ strings = [], delay = 100, pauseTime = 2000 }) => {
 
   return (
     <div className="inline-block">
-      <span className="text-3xl bg-clip-text bg-gradient-to-r from-green-200 to-green-500 font-bold">
+      <span className="text-3xl z-20 bg-clip-text bg-gradient-to-r from-green-200 to-green-500 font-bold">
         {currentText}
         <span className="animate-pulse">|</span>
       </span>

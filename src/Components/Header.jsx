@@ -58,7 +58,7 @@ function Header() {
       </div>
       {/* MenuBar*/}
       <div
-        className={`h-screen w-2/5 ${
+        className={`h-screen w-3/5 ${
           showMenu ? "translate-x-0" : "translate-x-[100%]"
         } transition-all fixed z-[9999] right-0 top-0 bg-gray-800 text-green-200`}
       >
@@ -79,7 +79,7 @@ function Header() {
               <a
                 href={item.link}
                 key={index}
-                className="font-yatraOne hover:p-3 transition-all hover:rounded-full hover:bg-green-300 hover:text-white text-2xl mx-2 my-8"
+                className="pl-12 font-yatraOne hover:p-3 transition-all hover:rounded-full hover:bg-green-300 hover:text-white text-2xl mx-2 my-8"
               >
                 {item.location}
               </a>

@@ -20,11 +20,9 @@ function Hero() {
           </p>
 
           <HeroSection />
-
-          {/* Social Icons */}
           <div className="flex mt-4 lg:mt-8 w-full sm:w-3/5 gap-4 sm:gap-6 lg:gap-12 justify-center lg:justify-start">
             <a
-              href="www.linkedin.com/in/angadsudan"
+              href="https://www.linkedin.com/in/angadsudan"
               className="text-2xl sm:text-3xl md:text-4xl hover:opacity-80 transition-opacity"
             >
               <FaLinkedin />

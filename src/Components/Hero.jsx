@@ -14,9 +14,7 @@ function Hero() {
           <p className="bg-clip-text text-center md:text-right text-transparent bg-gradient-to-r from-green-100 to-green-400 text-4xl sm:text-5xl md:text-6xl font-semibold">
             Hi There,
             <br />
-            <span className=" text-center md:text-right my-2 block">
-              I Am Angad
-            </span>
+            <span className="my-2 block">I Am Angad</span>
           </p>
 
           <HeroSection />

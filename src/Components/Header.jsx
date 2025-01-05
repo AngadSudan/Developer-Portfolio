@@ -1,23 +1,23 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
   const navbarData = [
     {
       location: "Home",
-      link: "#",
+      link: "/",
     },
     {
       location: "About",
-      link: "#",
+      link: "/",
     },
     {
       location: "Projects",
-      link: "#",
+      link: "/",
     },
     {
       location: "Contact",
-      link: "#",
+      link: "/",
     },
   ];
   return (
@@ -28,13 +28,13 @@ function Header() {
         <ul className="flex w-3/5 justify-between">
           {navbarData.map((item, index) => {
             return (
-              <a
-                href={item.link}
+              <NavLink
+                to={item.link}
                 key={index}
                 className="font-yatraOne hover:p-3 transition-all hover:rounded-full hover:bg-green-300 hover:text-white text-2xl mx-2 my-auto "
               >
                 {item.location}
-              </a>
+              </NavLink>
             );
           })}
         </ul>
@@ -76,13 +76,13 @@ function Header() {
         <ul className=" flex flex-col h-full">
           {navbarData.map((item, index) => {
             return (
-              <a
-                href={item.link}
+              <NavLink
+                to={item.link}
                 key={index}
                 className="pl-12 font-yatraOne hover:p-3 transition-all hover:rounded-full hover:bg-green-300 hover:text-white text-2xl mx-2 my-8"
               >
                 {item.location}
-              </a>
+              </NavLink>
             );
           })}
         </ul>

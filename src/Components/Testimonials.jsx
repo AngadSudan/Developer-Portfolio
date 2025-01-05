@@ -18,8 +18,8 @@ function Testimonials() {
         "https://media.licdn.com/dms/image/v2/D5603AQHJJQu8j0lnnw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1730834243174?e=1741219200&v=beta&t=j64_Ec11n9ckkYkBUmua6vQCda108QVoSbcqrny6eKs",
       name: "Akshat Singla",
       title: "Team Member - Team Daksh",
-      githubUrl: "https://github.com/Akshat-singla",
-      linkedinUrl: "https://www.linkedin.com/in/akshat-singla-b41bbb331/",
+      linkedinUrl: "https://github.com/Akshat-singla",
+      githubUrl: "https://www.linkedin.com/in/akshat-singla-b41bbb331/",
       testimonial:
         "It was great collaborating with him on Daksh. Everything was pre-planned, and well executed. He is a great team player and leader.",
     },

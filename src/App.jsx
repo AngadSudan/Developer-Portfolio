@@ -1,23 +1,11 @@
 import React from "react";
-import {
-  Header,
-  Hero,
-  Footer,
-  Experience,
-  Projects,
-  Technologies,
-  Testimonials,
-} from "./Components/index";
-
+import { Outlet } from "react-router-dom";
+import { Header, Footer } from "./components/index.js";
 const App = () => {
   return (
     <>
       <Header />
-      <Hero />
-      <Technologies />
-      <Projects />
-      <Experience className="hidden md:block" />
-      <Testimonials />
+      <Outlet />
       <Footer />
     </>
   );

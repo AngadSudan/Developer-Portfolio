@@ -15,11 +15,11 @@ function Testimonials() {
     },
     {
       profilePic:
-        "https://media.licdn.com/dms/image/v2/D5603AQHJJQu8j0lnnw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1730834243174?e=1741219200&v=beta&t=j64_Ec11n9ckkYkBUmua6vQCda108QVoSbcqrny6eKs",
+        "https://media.licdn.com/dms/image/v2/D5603AQGOOipQtI-apA/profile-displayphoto-shrink_400_400/B56ZQ_BnFuGoAo-/0/1736224176156?e=1741824000&v=beta&t=g2c7BFRBxwPv23Td_YKGMyi1EP62xy6AOsj7QOTKgBw",
       name: "Akshat Singla",
       title: "Team Member - Team Daksh",
-      linkedinUrl: "https://github.com/Akshat-singla",
-      githubUrl: "https://www.linkedin.com/in/akshat-singla-b41bbb331/",
+      githubUrl: "https://github.com/Akshat-singla",
+      linkedinUrl: "https://www.linkedin.com/in/akshat-singla-7b7013341/",
       testimonial:
         "It was great collaborating with him on Daksh. Everything was pre-planned, and well executed. He is a great team player and leader.",
     },

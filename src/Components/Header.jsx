@@ -9,7 +9,7 @@ function Header() {
     },
     {
       location: "About",
-      link: "/",
+      link: "/about",
     },
     {
       location: "Projects",

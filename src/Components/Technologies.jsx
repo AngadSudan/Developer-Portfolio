@@ -215,15 +215,15 @@ function Technologies() {
           </div>
         </motion.div>
 
-        <motion.h1
+        <h1
           className="hidden lg:flex text-center mt-64 items-center text-5xl rounded-full h-48 w-48 border-2 border-white"
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
+          // initial={{ opacity: 0, scale: 0.5 }}
+          // whileInView={{ opacity: 1, scale: 1 }}
+          // viewport={{ once: false }}
+          // transition={{ duration: 0.8 }}
         >
           Tech Stack
-        </motion.h1>
+        </h1>
 
         <motion.div
           className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8"

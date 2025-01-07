@@ -58,18 +58,6 @@ function TestimonialCard({
           <p className="text-blue-400 text-sm mb-2">{title}</p>
 
           <div className="flex gap-2 justify-end">
-            {linkedinUrl && (
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
-                href={linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-blue-400 transition-colors"
-                aria-label={`${name}'s LinkedIn profile`}
-              >
-                <FaGithub className="text-white text-xl" />
-              </motion.a>
-            )}
             {githubUrl && (
               <motion.a
                 whileHover={{ scale: 1.2, y: -2 }}
@@ -78,6 +66,18 @@ function TestimonialCard({
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-purple-400 transition-colors"
                 aria-label={`${name}'s GitHub profile`}
+              >
+                <FaGithub className="text-white text-xl" />
+              </motion.a>
+            )}
+            {linkedinUrl && (
+              <motion.a
+                whileHover={{ scale: 1.2, y: -2 }}
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-blue-400 transition-colors"
+                aria-label={`${name}'s LinkedIn profile`}
               >
                 <FaLinkedin className="text-white text-xl" />
               </motion.a>

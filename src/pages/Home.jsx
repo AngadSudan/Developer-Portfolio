@@ -1,13 +1,11 @@
 import React from "react";
 import {
-  Header,
   Hero,
-  Footer,
   Experience,
   Projects,
   Technologies,
   Testimonials,
-} from "../components/index.js";
+} from "../Components/index.js";
 function Home() {
   return (
     <>

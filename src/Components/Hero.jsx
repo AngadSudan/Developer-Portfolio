@@ -6,6 +6,7 @@ import { IoMdMail } from "react-icons/io";
 import { motion } from "framer-motion";
 
 function Hero() {
+  const [Visibility, setVisibility] = React.useState(false);
   return (
     <div className="relative min-h-screen grid place-items-center p-4 mb-24">
       <div className="w-full md:w-4/5 mx-auto h-[85%] my-auto flex flex-col lg:flex-row gap-8 lg:gap-0">
@@ -56,14 +57,11 @@ function Hero() {
                 Resume
               </a>
             </button>
-            <button className="rounded-lg text-lg sm:text-xl bg-green-500 p-3 sm:p-4 hover:bg-green-600 transition-colors">
-              <a
-                href="https://youtu.be/Hl2DVLxB7R0?feature=shared"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Hired
-              </a>
+            <button
+              onClick={() => setVisibility(true)}
+              className="rounded-lg text-lg sm:text-xl bg-green-500 p-3 sm:p-4 hover:bg-green-600 transition-colors"
+            >
+              Get a Tip
             </button>
           </div>
         </div>
@@ -108,6 +106,39 @@ function Hero() {
             </pre>
           </div>
         </motion.div>
+      </div>
+      <div
+        className={`fixed inset-0 ${
+          Visibility ? "flex" : "hidden"
+        } bg-black/40 backdrop-blur-sm z-30 p-4`}
+        onClick={() => setVisibility(false)}
+      >
+        <div
+          className="relative m-auto w-full max-w-md rounded-xl bg-gradient-to-br 
+                  from-blue-500/80 to-purple-500/90 
+                  p-6 shadow-xl transition-all duration-300 scale-100
+                  hover:shadow-purple-500/20"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={() => setVisibility(false)}
+            className="absolute right-4 top-4 text-3xl text-white/80 hover:text-white
+                     transition-colors duration-200"
+            aria-label="Close modal"
+          >
+            X
+          </button>
+
+          <div className="mt-4">
+            <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+              Tip from me<span className="inline-block animate-bounce">💡</span>
+            </h1>
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed text-center">
+              Focus on enjoying the process, and you'll uncover hidden gems on
+              the journey that often go unnoticed.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

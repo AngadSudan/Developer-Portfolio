@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Header, Footer } from "./components/index.js";
+import { Header, Footer } from "./Components/index.js";
 const App = () => {
   return (
     <>

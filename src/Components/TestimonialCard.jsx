@@ -13,84 +13,70 @@ function TestimonialCard({
 }) {
   return (
     <motion.div
+      className="bg-gradient-to-r from-[#051845] to-[#062056] mx-2 p-6 rounded-lg my-4 border-l-4 border-[#3b82f6] shadow-lg relative overflow-hidden"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{
-        duration: 0.6,
-        delay: 0.4 * index,
-        type: "spring",
-        bounce: 0.6,
-      }}
-      className="relative p-6 border-2 border-white/20 rounded-xl backdrop-blur-sm bg-slate-900/60 shadow-xl hover:border-white/40 transition-all duration-300"
+      viewport={{ once: false }}
     >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none" />
+      {/* Background accent */}
+      <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-green-300 opacity-10"></div>
+      <div className="absolute top-10 -left-16 w-32 h-32 rounded-full bg-[#06b6d4] opacity-10"></div>
 
-      <div className="relative flex justify-between items-start mx-auto w-[90%]">
-        <motion.div
-          className="flex flex-col items-center"
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.4 }}
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            style={{
-              backgroundImage: `url(${profilePic})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            className="rounded-full h-20 w-20 border-2 border-white/20 shadow-lg"
-            aria-label={`Profile picture of ${name}`}
-          />
-        </motion.div>
-
-        <motion.div
-          className="text-right"
-          initial={{ x: 20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.4 }}
-        >
-          <h2 className="font-bold text-xl text-white mb-1">{name}</h2>
-          <p className="text-blue-400 text-sm mb-2">{title}</p>
-
-          <div className="flex gap-2 justify-end">
+      <div className="flex items-center mb-4">
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#06b6d4] to-green-300 rounded-full blur-md opacity-70"></div>
+          <div className="relative p-1 bg-[#051845] rounded-full">
+            <img
+              src={profilePic}
+              alt={name}
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="ml-4">
+          <h1 className="text-xl font-bold text-white">{name}</h1>
+          <h2 className="text-lg text-gray-300">{title}</h2>
+          <div className="flex mt-2 space-x-3">
             {githubUrl && (
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
+              <a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-purple-400 transition-colors"
-                aria-label={`${name}'s GitHub profile`}
+                className="text-gray-400 hover:text-green-300 transition-colors"
               >
-                <FaGithub className="text-white text-xl" />
-              </motion.a>
+                <FaGithub size={20} />
+              </a>
             )}
             {linkedinUrl && (
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
+              <a
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-blue-400 transition-colors"
-                aria-label={`${name}'s LinkedIn profile`}
+                className="text-gray-400 hover:text-[#06b6d4] transition-colors"
               >
-                <FaLinkedin className="text-white text-xl" />
-              </motion.a>
+                <FaLinkedin size={20} />
+              </a>
             )}
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div className="relative mt-6">
-        <p className="text-white/80 text-center leading-relaxed tracking-wide">
-          {testimonial}
-        </p>
-      </motion.div>
+      <div className="mt-4 pr-2 custom-scrollbar">
+        <div className="text-gray-200 italic relative">
+          <span className="absolute -left-2 -top-2 text-4xl text-[#06b6d4] opacity-50">
+            "
+          </span>
+          <p className="pl-6 pr-6">{testimonial}</p>
+          <span className="absolute -right-2 bottom-0 text-4xl text-[#06b6d4] opacity-50">
+            "
+          </span>
+        </div>
+      </div>
+
+      {/* Side accent */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#06b6d4] via-green-300 to-[#6366f1]"></div>
     </motion.div>
   );
 }

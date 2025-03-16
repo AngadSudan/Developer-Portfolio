@@ -33,6 +33,16 @@ function Projects() {
         "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735638125/owqol6jkkwjp0efasrrs.png",
       tags: ["#mern", "#fullstack", "#tailwindcss"],
     },
+    {
+      name: "Slugtera",
+      description:
+        "Send Animated Messages Like Never Before! Express yourself with visually stunning animated texts and send them to your loved ones",
+      runningLink: "https://slugtera.vercel.app/",
+      codeLink: "https://github.com/AngadSudan/Slugtera.git",
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1742118309/bu84uuq3hqwujwqxsmve.png",
+      tags: ["#mern", "#vibecoding", "#animation"],
+    },
   ];
 
   return (

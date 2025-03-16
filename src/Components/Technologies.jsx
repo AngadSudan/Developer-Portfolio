@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import TechnologyCard from "./TechnologyCard";
 import {
   SiHtml5,
   SiCss3,
@@ -22,276 +21,305 @@ import {
   SiGit,
 } from "react-icons/si";
 
-function Technologies() {
-  const technology = [
-    {
-      name: "HTML",
-      image: <SiHtml5 className="w-12 h-12 text-[#E34F26]" />,
+// Improved Technology Card Component
+const TechnologyCard = ({ name, icon, category }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Category-based color schemes
+  const colorSchemes = {
+    Frontend: {
+      bg: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
+      border: "border-cyan-400",
+      hover: "group-hover:border-cyan-300",
     },
-    {
-      name: "CSS",
-      image: <SiCss3 className="w-12 h-12 text-[#1572B6]" />,
+    Backend: {
+      bg: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
+      border: "border-green-400",
+      hover: "group-hover:border-green-300",
     },
-    {
-      name: "JavaScript",
-      image: <SiJavascript className="w-12 h-12 text-[#F7DF1E]" />,
+    Database: {
+      bg: "bg-gradient-to-br from-purple-500/20 to-indigo-500/20",
+      border: "border-purple-400",
+      hover: "group-hover:border-purple-300",
     },
-    {
-      name: "React",
-      image: <SiReact className="w-12 h-12 text-[#61DAFB]" />,
+    Programming: {
+      bg: "bg-gradient-to-br from-yellow-500/20 to-amber-500/20",
+      border: "border-yellow-400",
+      hover: "group-hover:border-yellow-300",
     },
-    {
-      name: "Redux",
-      image: <SiRedux className="w-12 h-12 text-[#764ABC]" />,
-    },
-    {
-      name: "React Router",
-      image: <SiReactrouter className="w-12 h-12 text-[#CA4245]" />,
-    },
-    {
-      name: "Express",
-      image: <SiExpress className="w-12 h-12 text-white" />,
-    },
-    {
-      name: "Node.js",
-      image: <SiNodedotjs className="w-12 h-12 text-[#339933]" />,
-    },
-    {
-      name: "MongoDB",
-      image: <SiMongodb className="w-12 h-12 text-[#47A248]" />,
-    },
-    {
-      name: "Python",
-      image: <SiPython className="w-12 h-12 text-[#3776AB]" />,
-    },
-    {
-      name: "C",
-      image: <SiC className="w-12 h-12 text-[#A8B9CC]" />,
-    },
-    {
-      name: "Socket.io",
-      image: <SiSocketdotio className="w-12 h-12 text-white" />,
-    },
-    {
-      name: "Git",
-      image: <SiGit className="w-12 h-12 text-[#F05032]" />,
-    },
-    {
-      name: "TypeScript",
-      image: <SiTypescript className="w-12 h-12 text-[#3178C6]" />,
-    },
-    {
-      name: "PostgreSQL",
-      image: <SiPostgresql className="w-12 h-12 text-[#4169E1]" />,
-    },
-    {
-      name: "MySQL",
-      image: <SiMysql className="w-12 h-12 text-[#4479A1]" />,
-    },
-    {
-      name: "Prisma",
-      image: <SiPrisma className="w-12 h-12 text-white" />,
-    },
-    {
-      name: "Next.js",
-      image: <SiNextdotjs className="w-12 h-12 text-white" />,
-    },
-  ];
+  };
+
+  const colors = colorSchemes[category];
 
   return (
     <motion.div
-      className="h-fit p-5 lg:p-0 lg:min-h-screen mb-36"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
+      className={`group relative flex flex-col items-center justify-center p-4 rounded-xl ${colors.bg} backdrop-blur-sm border ${colors.border} transition-all duration-300 hover:shadow-lg hover:shadow-${colors.border}/20`}
+      whileHover={{ scale: 1.05, y: -5 }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <motion.h1
-        className="lg:hidden text-center text-3xl mb-24"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.5 }}
+      <motion.div
+        className="text-4xl mb-2"
+        animate={{ rotate: isHovered ? 360 : 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        Here's a Recap of What All I Have Used
-      </motion.h1>
+        {icon}
+      </motion.div>
 
-      <div className="grid place-items-center w-4/5 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mx-auto lg:hidden">
-        {technology.map((tech, index) => (
-          <motion.div
-            key={tech.name}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <TechnologyCard
-              index={index}
-              image={tech.image}
-              disabled="true"
-              name={tech.name}
-            />
-          </motion.div>
-        ))}
-      </div>
+      <h3 className="text-sm font-medium text-center">{name}</h3>
 
-      <motion.h1
-        className="hidden lg:block text-center text-3xl mb-24"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.5 }}
-      >
-        Here's All that I Have Used
-      </motion.h1>
-
-      <div className="hidden lg:flex justify-evenly">
-        <motion.div
-          className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="border-2 border-green-300 rounded-md p-5">
-            <h1 className="text-center text-5xl">Front-end</h1>
-            <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
-              {technology.map((tech, index) => {
-                if (
-                  [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "React",
-                    "Redux",
-                    "React Router",
-                    "Next.js",
-                    "TypeScript",
-                  ].includes(tech.name)
-                ) {
-                  return (
-                    <motion.div
-                      key={tech.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: false }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                      <TechnologyCard
-                        index={index}
-                        image={tech.image}
-                        name={tech.name}
-                      />
-                    </motion.div>
-                  );
-                }
-              })}
-            </div>
-          </div>
-
-          <div className="border-2 border-green-300 rounded-md p-5">
-            <h1 className="text-center text-5xl">Back-end</h1>
-            <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
-              {technology.map((tech, index) => {
-                if (["Express", "Node.js", "Socket.io"].includes(tech.name)) {
-                  return (
-                    <motion.div
-                      key={tech.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: false }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                      <TechnologyCard
-                        index={index}
-                        image={tech.image}
-                        name={tech.name}
-                      />
-                    </motion.div>
-                  );
-                }
-              })}
-            </div>
-          </div>
-        </motion.div>
-
-        <h1
-          className="hidden lg:flex text-center mt-64 items-center text-5xl rounded-full h-48 w-48 border-2 border-white"
-          // initial={{ opacity: 0, scale: 0.5 }}
-          // whileInView={{ opacity: 1, scale: 1 }}
-          // viewport={{ once: false }}
-          // transition={{ duration: 0.8 }}
-        >
-          Tech Stack
-        </h1>
-
-        <motion.div
-          className="lg:flex flex-col h-full w-full lg:w-1/3 gap-16 md:grid md:grid-cols-1 md:gap-8"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="border-2 border-green-300 rounded-md p-5">
-            <h1 className="text-center text-5xl">Database</h1>
-            <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
-              {technology.map((tech, index) => {
-                if (
-                  ["MongoDB", "PostgreSQL", "MySQL", "Prisma"].includes(
-                    tech.name
-                  )
-                ) {
-                  return (
-                    <motion.div
-                      key={tech.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: false }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                      <TechnologyCard
-                        index={index}
-                        image={tech.image}
-                        name={tech.name}
-                      />
-                    </motion.div>
-                  );
-                }
-              })}
-            </div>
-          </div>
-
-          <div className="border-2 border-green-300 rounded-md p-5">
-            <h1 className="text-center text-5xl">Programming</h1>
-            <div className="grid place-items-center grid-cols-2 sm:grid-cols-3 gap-4 w-full mx-auto my-3">
-              {technology.map((tech, index) => {
-                if (
-                  ["Python", "C", "JavaScript", "TypeScript"].includes(
-                    tech.name
-                  )
-                ) {
-                  return (
-                    <motion.div
-                      key={tech.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: false }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                      <TechnologyCard
-                        index={index}
-                        image={tech.image}
-                        name={tech.name}
-                      />
-                    </motion.div>
-                  );
-                }
-              })}
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      <motion.div
+        className={`absolute inset-0 rounded-xl border-2 border-transparent ${colors.hover} opacity-0 group-hover:opacity-100`}
+        initial={false}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
     </motion.div>
+  );
+};
+
+function Technologies() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const technologies = [
+    {
+      name: "HTML",
+      icon: <SiHtml5 className="text-[#E34F26]" />,
+      category: "Frontend",
+    },
+    {
+      name: "CSS",
+      icon: <SiCss3 className="text-[#1572B6]" />,
+      category: "Frontend",
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="text-[#F7DF1E]" />,
+      category: "Frontend",
+    },
+    {
+      name: "React",
+      icon: <SiReact className="text-[#61DAFB]" />,
+      category: "Frontend",
+    },
+    {
+      name: "Redux",
+      icon: <SiRedux className="text-[#764ABC]" />,
+      category: "Frontend",
+    },
+    {
+      name: "React Router",
+      icon: <SiReactrouter className="text-[#CA4245]" />,
+      category: "Frontend",
+    },
+    {
+      name: "Next.js",
+      icon: <SiNextdotjs className="text-white" />,
+      category: "Frontend",
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-[#3178C6]" />,
+      category: "Frontend",
+    },
+
+    {
+      name: "Express",
+      icon: <SiExpress className="text-white" />,
+      category: "Backend",
+    },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="text-[#339933]" />,
+      category: "Backend",
+    },
+    {
+      name: "Socket.io",
+      icon: <SiSocketdotio className="text-white" />,
+      category: "Backend",
+    },
+
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-[#47A248]" />,
+      category: "Database",
+    },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="text-[#4169E1]" />,
+      category: "Database",
+    },
+    {
+      name: "MySQL",
+      icon: <SiMysql className="text-[#4479A1]" />,
+      category: "Database",
+    },
+    {
+      name: "Prisma",
+      icon: <SiPrisma className="text-white" />,
+      category: "Database",
+    },
+
+    {
+      name: "Python",
+      icon: <SiPython className="text-[#3776AB]" />,
+      category: "Programming",
+    },
+    {
+      name: "C",
+      icon: <SiC className="text-[#A8B9CC]" />,
+      category: "Programming",
+    },
+    {
+      name: "Git",
+      icon: <SiGit className="text-[#F05032]" />,
+      category: "Programming",
+    },
+  ];
+
+  const categories = ["all", "Frontend", "Backend", "Database", "Programming"];
+
+  const filteredTechnologies =
+    activeCategory === "all"
+      ? technologies
+      : technologies.filter((tech) => tech.category === activeCategory);
+
+  return (
+    <div className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+
+      <motion.div
+        className="max-w-7xl mx-auto"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-100 to-green-500 inline-block text-transparent bg-clip-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+          >
+            Tech Stack & Skills
+          </motion.h2>
+          <motion.p
+            className="max-w-2xl mx-auto text-lg text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            A collection of technologies I've worked with throughout my journey
+          </motion.p>
+        </div>
+
+        {/* Category Filter */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 rounded-full text-sm transition-all ${
+                activeCategory === category
+                  ? "bg-gradient-to-r from-green-400 to-green-500 text-white font-medium shadow-lg shadow-blue-500/20"
+                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
+              }`}
+            >
+              {category === "all" ? "All Technologies" : category}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Tech Cards Grid */}
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+        >
+          {filteredTechnologies.map((tech, index) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+            >
+              <TechnologyCard
+                name={tech.name}
+                icon={tech.icon}
+                category={tech.category}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Experience Level Indicators */}
+        <motion.div
+          className="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {["Frontend", "Backend", "Database", "Programming"].map(
+            (category, idx) => {
+              const count = technologies.filter(
+                (t) => t.category === category
+              ).length;
+              const percentage = Math.round(
+                (count / technologies.length) * 100
+              );
+
+              const colorClasses = {
+                Frontend: "from-blue-500 to-cyan-400",
+                Backend: "from-green-500 to-emerald-400",
+                Database: "from-purple-500 to-indigo-400",
+                Programming: "from-yellow-500 to-amber-400",
+              };
+
+              return (
+                <motion.div
+                  key={category}
+                  className="bg-gray-800/50 rounded-lg p-6 backdrop-blur-sm border border-gray-700"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <h3 className="text-xl font-medium mb-2">{category}</h3>
+                  <div className="h-2 w-full bg-gray-700 rounded-full overflow-hidden mb-2">
+                    <motion.div
+                      className={`h-full bg-gradient-to-r ${colorClasses[category]}`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${percentage}%` }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                    />
+                  </div>
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span>{count} technologies</span>
+                    <span>{percentage}% of stack</span>
+                  </div>
+                </motion.div>
+              );
+            }
+          )}
+        </motion.div>
+      </motion.div>
+    </div>
   );
 }
 

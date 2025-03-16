@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "../../data/globe.json";
+import React from "react";
 
 extend({ ThreeGlobe });
 
@@ -12,11 +13,11 @@ const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
 const cameraZ = 300;
 
+// Move this outside the component to prevent recreation
 let numbersOfRings = [0];
 
-export function Globe({ globeConfig, data }) {
+function GlobeComponent({ globeConfig, data }) {
   const [globeData, setGlobeData] = useState(null);
-
   const globeRef = useRef(null);
 
   const defaultProps = {
@@ -36,14 +37,7 @@ export function Globe({ globeConfig, data }) {
     ...globeConfig,
   };
 
-  useEffect(() => {
-    if (globeRef.current) {
-      _buildData();
-      _buildMaterial();
-    }
-  }, [globeRef.current]);
-
-  const _buildMaterial = () => {
+  const _buildMaterial = useCallback(() => {
     if (!globeRef.current) return;
 
     const globeMaterial = globeRef.current.globeMaterial();
@@ -51,9 +45,9 @@ export function Globe({ globeConfig, data }) {
     globeMaterial.emissive = new Color(globeConfig.emissive);
     globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
     globeMaterial.shininess = globeConfig.shininess || 0.9;
-  };
+  }, [globeConfig]);
 
-  const _buildData = () => {
+  const _buildData = useCallback(() => {
     const arcs = data;
     let points = [];
     for (let i = 0; i < arcs.length; i++) {
@@ -82,25 +76,9 @@ export function Globe({ globeConfig, data }) {
     );
 
     setGlobeData(filteredPoints);
-  };
+  }, [data, defaultProps.pointSize]);
 
-  useEffect(() => {
-    if (globeRef.current && globeData) {
-      globeRef.current
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7)
-        .showAtmosphere(defaultProps.showAtmosphere)
-        .atmosphereColor(defaultProps.atmosphereColor)
-        .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor((e) => {
-          return defaultProps.polygonColor;
-        });
-      startAnimation();
-    }
-  }, [globeData]);
-
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     if (!globeRef.current || !globeData) return;
 
     globeRef.current
@@ -136,7 +114,30 @@ export function Globe({ globeConfig, data }) {
       .ringRepeatPeriod(
         (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
       );
-  };
+  }, [data, globeData, defaultProps]);
+
+  useEffect(() => {
+    if (globeRef.current) {
+      _buildData();
+      _buildMaterial();
+    }
+  }, [globeRef.current, _buildData, _buildMaterial]);
+
+  useEffect(() => {
+    if (globeRef.current && globeData) {
+      globeRef.current
+        .hexPolygonsData(countries.features)
+        .hexPolygonResolution(3)
+        .hexPolygonMargin(0.7)
+        .showAtmosphere(defaultProps.showAtmosphere)
+        .atmosphereColor(defaultProps.atmosphereColor)
+        .atmosphereAltitude(defaultProps.atmosphereAltitude)
+        .hexPolygonColor(() => {
+          return defaultProps.polygonColor;
+        });
+      startAnimation();
+    }
+  }, [globeData, defaultProps, startAnimation]);
 
   useEffect(() => {
     if (!globeRef.current || !globeData) return;
@@ -157,7 +158,7 @@ export function Globe({ globeConfig, data }) {
     return () => {
       clearInterval(interval);
     };
-  }, [globeRef.current, globeData]);
+  }, [globeRef.current, globeData, data.length]);
 
   return (
     <>
@@ -166,6 +167,9 @@ export function Globe({ globeConfig, data }) {
   );
 }
 
+// Memoize the Globe component
+export const Globe = React.memo(GlobeComponent);
+
 export function WebGLRendererConfig() {
   const { gl, size } = useThree();
 
@@ -173,7 +177,7 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
-  }, []);
+  }, [gl, size]);
 
   return null;
 }
@@ -182,6 +186,7 @@ export function World(props) {
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
+
   return (
     <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
       <WebGLRendererConfig />
@@ -213,6 +218,9 @@ export function World(props) {
     </Canvas>
   );
 }
+
+// Export this as a memoized component too
+export const MemoizedWorld = React.memo(World);
 
 export function hexToRgb(hex) {
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;

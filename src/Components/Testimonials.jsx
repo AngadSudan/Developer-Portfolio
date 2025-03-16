@@ -7,15 +7,14 @@ function Testimonials() {
     {
       profilePic: "https://avatars.githubusercontent.com/u/123460167?v=4",
       name: "Soham Chakraborty",
-      title: "Team Lead- JP Morgan Corp.",
+      title: "Team Lead- J Media Corp.",
       githubUrl: "https://github.com/Soham2395",
       linkedinUrl: "https://www.linkedin.com/in/soham-chakraborty-108450255/",
       testimonial:
         "He's a hardworker and does the work before the deadlines. Highly appreciate that part of him.",
     },
     {
-      profilePic:
-        "https://media.licdn.com/dms/image/v2/D5603AQGOOipQtI-apA/profile-displayphoto-shrink_400_400/B56ZQ_BnFuGoAo-/0/1736224176156?e=1741824000&v=beta&t=g2c7BFRBxwPv23Td_YKGMyi1EP62xy6AOsj7QOTKgBw",
+      profilePic: "https://avatars.githubusercontent.com/u/179904110?v=4",
       name: "Akshat Singla",
       title: "Team Member - Team Daksh",
       githubUrl: "https://github.com/Akshat-singla",
@@ -30,7 +29,7 @@ function Testimonials() {
       <h2 className="text-4xl font-semibold text-center my-5">
         Know what people say about me
       </h2>
-      <div className=" grid mt-20 grid-cols-1 md:grid-cols-3 w-4/5  justify-evenly gap-5 ">
+      <div className=" grid mt-20 grid-cols-1 md:grid-cols-2 w-4/5  justify-evenly gap-5 ">
         {data.map((item, index) => (
           <TestimonialCard
             index={index}

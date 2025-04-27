@@ -8,7 +8,7 @@ import {
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { Home, About, Contact, Projects } from "./pages/index.js";
+import { Home, About, Contact, Pay, Projects } from "./pages/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +17,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/checkout" element={<Pay />} />
     </Route>
   )
 );

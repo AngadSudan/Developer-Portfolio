@@ -28,7 +28,7 @@ function About() {
     },
   };
   return (
-    <div className="relative container mx-auto px-4">
+    <div className="relative w-[90%] container mx-auto px-4">
       {/* Background Text */}
       <div
         className={`fixed inset-0 flex items-center justify-center pointer-events-none ${

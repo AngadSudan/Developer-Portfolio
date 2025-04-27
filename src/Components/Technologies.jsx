@@ -19,6 +19,7 @@ import {
   SiPrisma,
   SiNextdotjs,
   SiGit,
+  SiNginx,
 } from "react-icons/si";
 
 // Improved Technology Card Component
@@ -47,10 +48,15 @@ const TechnologyCard = ({ name, icon, category }) => {
       border: "border-yellow-400",
       hover: "group-hover:border-yellow-300",
     },
+    Devops: {
+      bg: "bg-gradient-to-br from-red-500/20 to-orange-500/20",
+      border: "border-red-400",
+      hover: "group-hover:border-red-300",
+    },
   };
 
   const colors = colorSchemes[category];
-
+  console.log(category);
   return (
     <motion.div
       className={`group relative flex flex-col items-center justify-center p-4 rounded-xl ${colors.bg} backdrop-blur-sm border ${colors.border} transition-all duration-300 hover:shadow-lg hover:shadow-${colors.border}/20`}
@@ -138,7 +144,11 @@ function Technologies() {
       icon: <SiSocketdotio className="text-white" />,
       category: "Backend",
     },
-
+    {
+      name: "Nginx",
+      icon: <SiNginx className="text-white" />,
+      category: "Devops",
+    },
     {
       name: "MongoDB",
       icon: <SiMongodb className="text-[#47A248]" />,
@@ -177,7 +187,14 @@ function Technologies() {
     },
   ];
 
-  const categories = ["all", "Frontend", "Backend", "Database", "Programming"];
+  const categories = [
+    "all",
+    "Frontend",
+    "Backend",
+    "Database",
+    "Programming",
+    "Devops",
+  ];
 
   const filteredTechnologies =
     activeCategory === "all"
@@ -274,7 +291,7 @@ function Technologies() {
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {["Frontend", "Backend", "Database", "Programming"].map(
+          {["Frontend", "Backend", "Database", "Programming", "Devops"].map(
             (category, idx) => {
               const count = technologies.filter(
                 (t) => t.category === category
@@ -288,6 +305,7 @@ function Technologies() {
                 Backend: "from-green-500 to-emerald-400",
                 Database: "from-purple-500 to-indigo-400",
                 Programming: "from-yellow-500 to-amber-400",
+                Devops: "from-red-300 to-orange-300",
               };
 
               return (

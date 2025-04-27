@@ -5,10 +5,30 @@ import { motion } from "framer-motion";
 function Experience({ className }) {
   const data = [
     {
+      title: "April 2025",
+      content: (
+        <ExperienceCard
+          logo="https://media.licdn.com/dms/image/v2/D560BAQGQJvvLGSPERw/company-logo_200_200/company-logo_200_200/0/1720124033063/tbb_media_logo?e=1751500800&v=beta&t=2Hw79yOGhB7s8xNW8ZnXkD7eTR0nUJd5Zbea2HrGVuY"
+          Position="Full Stack Developer"
+          Organisation="TBB Media"
+          Timeline="January 2025 - April 2025s"
+          Pointers={[
+            "Built 7 full-stack projects, handling both frontend & backend.",
+            "Led a team as a Team Lead for 4 projects, managing tasks and guiding development.",
+            "Deployed the full Stack projects on VPS using NGINX.",
+            "Added payment Gateway integrations.",
+            "Worked with MERN stack, Next.js, scalable backend architectures.",
+            "Focused on performance optimization, security, and best practices.",
+          ]}
+          isEven={false}
+        />
+      ),
+    },
+    {
       title: "September 2024",
       content: (
         <ExperienceCard
-          logo="https://ieee.chitkara.edu.in/img/ieee.png"
+          logo="https://ieee-website-six.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffavicon.f6913042.ico&w=1080&q=75"
           Position="Web Team Member"
           Organisation="IEEE"
           Timeline="September 2024 - Present"

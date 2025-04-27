@@ -8,11 +8,11 @@ function Projects() {
       name: "Daksh",
       description:
         "Daksh is an all-in-one platform designed to enhance the academic experience by providing solution for managing study materials and facilitating seamless communication between students and teachers.",
-      runningLink: "https://daksh-git-main-angadsudans-projects.vercel.app/",
+      runningLink: "https://daksh-saas-frontend.vercel.app",
       codeLink: "https://github.com/AngadSudan/Daksha",
       tags: ["#mern", "#genAI"],
       thumbnail:
-        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735636860/i9nvabfe0igwpwqebkrl.png",
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1745761645/Screenshot_2025-04-27_191353_fihjpq.png",
     },
     {
       name: "Hack With Her",

@@ -37,9 +37,12 @@ function Pay() {
       return;
     }
 
-    const result = await axios.post("http://localhost:8000/api/order", {
-      amount: amount,
-    });
+    const result = await axios.post(
+      "https://developer-portfolio-pi-red.vercel.app/api/order",
+      {
+        amount: amount,
+      }
+    );
 
     if (!result) {
       alert("Server error. Are you online?");
@@ -64,7 +67,7 @@ function Pay() {
         };
 
         const result = await axios.post(
-          "http://localhost:8000/payment/success",
+          "https://developer-portfolio-pi-red.vercel.app/payment/success",
           data
         );
 

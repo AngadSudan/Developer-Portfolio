@@ -6,7 +6,10 @@ import "dotenv/config";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://portfolio-angadsudans-projects.vercel.app",
+    ],
     methods: ["POST"],
   })
 );
@@ -39,7 +42,7 @@ app.post("/api/order", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-app.post("/success", async (req, res) => {
+app.post("/payment/success", async (req, res) => {
   try {
     // getting the details back from our font-end
     const {

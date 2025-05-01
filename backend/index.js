@@ -9,6 +9,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://portfolio-angadsudans-projects.vercel.app",
+      process.env.FRONTEND_URL,
     ],
     methods: ["POST"],
   })

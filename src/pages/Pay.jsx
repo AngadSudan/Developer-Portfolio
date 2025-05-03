@@ -37,12 +37,9 @@ function Pay() {
       return;
     }
 
-    const result = await axios.post(
-      "https://developer-portfolio-pi-red.vercel.app/api/order",
-      {
-        amount: amount,
-      }
-    );
+    const result = await axios.post("https://angadsudan.me/api/api/order", {
+      amount: amount,
+    });
 
     if (!result) {
       alert("Server error. Are you online?");
@@ -67,7 +64,7 @@ function Pay() {
         };
 
         const result = await axios.post(
-          "https://developer-portfolio-pi-red.vercel.app/payment/success",
+          "https://angadsudan.me/api/payment/success",
           data
         );
 
@@ -109,7 +106,7 @@ function Pay() {
 
               <p className="text-green-100 text-lg leading-relaxed">
                 Not a reason to buy at all. Totally your wish. I'm only here to
-                test payemnt Gateways and maybe flex a bit about it XD
+                test payment Gateways and maybe flex a bit about it XD
               </p>
 
               <div className="bg-gray-700/50 rounded-lg p-4 border-l-4 border-green-400">

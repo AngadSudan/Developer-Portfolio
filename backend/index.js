@@ -17,6 +17,13 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.json({
+    message:
+      "wow you found my secret backend endpoint lets see you play around and figure out my server configuration.",
+  });
+});
+
 app.post("/api/order", async (req, res) => {
   try {
     console.log("instance creation started");

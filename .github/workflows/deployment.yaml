@@ -18,7 +18,7 @@ jobs:
         run: |
           sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no aravconray@34.55.231.152 << 'EOF' && ls
             cd portfolio && 
-            git pull https://angadsudan:${{secrets.sshToken}}@github.com/AngadSudan/Developer-Portfolio.git main && ls && npm i && npm run build && cd backend &&
+            git pull https://angadsudan:${{secrets.sshToken}}@github.com/AngadSudan/Developer-Portfolio.git main && ls && npm i && npm run build && sudo rm -rf /var/www/portfolio/* && sudo cp -r dist/* /var/www/portfolio/ && cd backend &&
              pwd && 
-            npm install && pm2 restart portfolio-backend
+            npm install && pm2 restart portfolio-backend && sudo systemctl restart nginx
           EOF

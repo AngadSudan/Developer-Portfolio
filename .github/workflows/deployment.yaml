@@ -15,7 +15,7 @@ jobs:
       - name: Deploy using SSH and password auth
         env:
           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-          SSH_USER: aravconray
+          SSH_USER: root
           SSH_HOST: 34.55.231.152
           GIT_TOKEN: ${{ secrets.SSH_TOKEN }}
         run: |

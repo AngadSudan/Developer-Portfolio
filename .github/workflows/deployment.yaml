@@ -1,4 +1,4 @@
-name: Deploy to staging
+name: Deploy to Staging
 
 on:
   push:
@@ -12,14 +12,36 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
-      - name: Deploy using password auth
+      - name: Deploy using SSH and password auth
         env:
-          SSH_PASSWORD: ${{ secrets.password }}
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SSH_USER: aravconray
+          SSH_HOST: 34.55.231.152
+          GIT_TOKEN: ${{ secrets.SSH_TOKEN }}
         run: |
-          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no aravconray@34.55.231.152 << 'EOF' && ls
-            cd portfolio && 
-            git pull https://angadsudan:${{secrets.sshToken}}@github.com/AngadSudan/Developer-Portfolio.git main && ls && npm i && npm run build 
-            &&  && sudo rm -rf /var/www/portfolio/* && sudo cp -r dist/* /var/www/portfolio/ && cd backend &&
-             pwd && 
-            npm install && pm2 restart portfolio-backend && sudo systemctl restart nginx
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
+            set -e
+            
+            cd ~/portfolio
+
+            git pull https://angadsudan:$GIT_TOKEN@github.com/AngadSudan/Developer-Portfolio.git main
+
+            ls
+
+            npm install
+
+            npm run build
+
+            # Remove old frontend and copy new one
+            sudo rm -rf /var/www/portfolio/*
+
+            sudo cp -r dist/* /var/www/portfolio/
+
+            cd backend
+
+            npm install
+
+            pm2 restart portfolio-backend
+
+            sudo systemctl restart nginx
           EOF

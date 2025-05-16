@@ -5,6 +5,16 @@ import TestimonialCard from "./TestimonialCard";
 function Testimonials() {
   const data = [
     {
+      profilePic:
+        "https://media.licdn.com/dms/image/v2/D5603AQF-AZSuuxCeMA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1722771251707?e=1752710400&v=beta&t=U3KPVMyEvPio6qpGB9LsI67SLBbnIga5p2NdBf6P6fk",
+      name: "Robin Gupta",
+      title: "CEO- TBB Media",
+      githubUrl: "",
+      linkedinUrl: "https://www.linkedin.com/in/robin-gupta-r16197g/",
+      testimonial:
+        "It was a pleasure working with Angad. He's a humble and highly skilled professional who truly knows his craft. Always available for a call and a master of frontend development.",
+    },
+    {
       profilePic: "https://avatars.githubusercontent.com/u/123460167?v=4",
       name: "Soham Chakraborty",
       title: "Team Lead- J Media Corp.",
@@ -12,15 +22,6 @@ function Testimonials() {
       linkedinUrl: "https://www.linkedin.com/in/soham-chakraborty-108450255/",
       testimonial:
         "He's a hardworker and does the work before the deadlines. Highly appreciate that part of him.",
-    },
-    {
-      profilePic: "https://avatars.githubusercontent.com/u/179904110?v=4",
-      name: "Akshat Singla",
-      title: "Team Member - Team Daksh",
-      githubUrl: "https://github.com/Akshat-singla",
-      linkedinUrl: "https://www.linkedin.com/in/akshat-singla-7b7013341/",
-      testimonial:
-        "It was great collaborating with him on Daksh. Everything was pre-planned, and well executed. He is a great team player and leader.",
     },
   ];
   return (

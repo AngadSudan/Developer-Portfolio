@@ -8,7 +8,7 @@ function Projects() {
       name: "Daksh",
       description:
         "Daksh is an all-in-one platform designed to enhance the academic experience by providing solution for managing study materials and facilitating seamless communication between students and teachers.",
-      runningLink: "https://daksh-saas-frontend.vercel.app",
+      runningLink: "https://daksh.angadsudan.me",
       codeLink: "https://github.com/AngadSudan/Daksha",
       tags: ["#mern", "#genAI"],
       thumbnail:
@@ -42,6 +42,15 @@ function Projects() {
       thumbnail:
         "https://res.cloudinary.com/djy3ewpb8/image/upload/v1742118309/bu84uuq3hqwujwqxsmve.png",
       tags: ["#mern", "#vibecoding", "#animation"],
+    },
+    {
+      name: "Quizora",
+      description: "A Chat Application with AI Based quiz generation.",
+      runningLink: "https://quizora.angadsudan.me",
+      codeLink: "",
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1747402834/Screenshot_2025-05-16_190619_tu9c5s.png",
+      tags: ["#mern", "#AI"],
     },
   ];
 

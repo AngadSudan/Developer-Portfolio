@@ -15,9 +15,19 @@ function Projects() {
         "https://res.cloudinary.com/djy3ewpb8/image/upload/v1745761645/Screenshot_2025-04-27_191353_fihjpq.png",
     },
     {
+      name: "Dr. Web",
+      description:
+        "A Real Time Software Monitoring system created to observe your custom prometheus configuration with ease",
+      runningLink: "https://drweb.angadsudan.me",
+      codeLink: "",
+      thumbnail:
+        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1751985439/Screenshot_2025-07-08_200132_rce3nc.png",
+      tags: ["#mern", "#monitoring", "#prometheus"],
+    },
+    {
       name: "Hack With Her",
       description:
-        "The all in one information platform regarding the HackWithHer hackathon organized by IEEE-CIET. generate me a description for project daksh",
+        "The all in one information platform regarding the HackWithHer hackathon organized by IEEE-CIET.",
       runningLink: "https://hack-with-her.in/",
       codeLink: "https://github.com/Soham2395/HackWithHer",
       thumbnail:
@@ -45,7 +55,7 @@ function Projects() {
     },
     {
       name: "Quizora",
-      description: "A Chat Application with AI Based quiz generation.",
+      description: "A Quiz Application with AI Based quiz generation.",
       runningLink: "https://quizora.angadsudan.me",
       codeLink: "",
       thumbnail:

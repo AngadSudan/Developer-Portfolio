@@ -20,6 +20,8 @@ import {
   SiNextdotjs,
   SiGit,
   SiNginx,
+  SiPrometheus,
+  SiDocker,
 } from "react-icons/si";
 
 // Improved Technology Card Component
@@ -184,6 +186,16 @@ function Technologies() {
       name: "Git",
       icon: <SiGit className="text-[#F05032]" />,
       category: "Programming",
+    },
+    {
+      name: "Prometheus",
+      icon: <SiPrometheus className="text-[#F05032]" />,
+      category: "Devops",
+    },
+    {
+      name: "Docker",
+      icon: <SiDocker className="text-blue-400" />,
+      category: "Devops",
     },
   ];
 

@@ -24,6 +24,7 @@ import {
   SiDocker,
   SiDjango,
 } from "react-icons/si";
+import { SiApachekafka } from "react-icons/si";
 
 // Improved Technology Card Component
 const TechnologyCard = ({ name, icon, category }) => {
@@ -212,7 +213,11 @@ function Technologies() {
         />
       ),
       category: "Backend",
-    },
+    },{
+      name:"Kafka",
+      icon: <SiApachekafka />,
+      category: "Devops"
+    }
   ];
 
   const categories = [

@@ -50,7 +50,7 @@ function Hero() {
           <div className="mt-6 flex flex-wrap gap-4">
             <button className="rounded-lg text-lg sm:text-xl bg-green-500 p-3 sm:p-4 hover:bg-green-600 transition-colors">
               <a
-                href="https://docs.google.com/document/d/1H8kkb-ia8MOcJePn56N7LylWlKEKZ2mw/edit#heading=h.gjdgxs"
+                href="https://res.cloudinary.com/djy3ewpb8/image/upload/v1763096139/resume_citapr.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

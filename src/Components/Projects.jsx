@@ -4,6 +4,14 @@ import ProjectCard from "./ProjectCard";
 function Projects() {
   const data = [
     {
+      name:"Octodock",
+      description:"Octodock is an AI-powered developer tool that automates backend code generation, correction, and deployment readiness, with seamless GitHub integration for efficient, secure, and production-ready development."
+      ,runningLink:"https://octodock.angadsudan.me",
+      codeLink:"https://github.com/AngadSudan/Octodock",
+      tags:["#mern","#devops","#genAi","#production"],
+      thumbnail:"https://res.cloudinary.com/djy3ewpb8/image/upload/v1763095938/Screenshot_from_2025-11-14_10-20-55_pvvfnd.png"
+    },
+    {
       name: "Daksh",
       description:
         "Daksh is an all-in-one platform designed to enhance the academic experience by providing solution for managing study materials and facilitating seamless communication between students and teachers.",
@@ -41,16 +49,6 @@ function Projects() {
       thumbnail:
         "https://res.cloudinary.com/djy3ewpb8/image/upload/v1735638125/owqol6jkkwjp0efasrrs.png",
       tags: ["#mern", "#fullstack", "#tailwindcss"],
-    },
-    {
-      name: "Slugtera",
-      description:
-        "Send Animated Messages Like Never Before! Express yourself with visually stunning animated texts and send them to your loved ones",
-      runningLink: "https://slugtera.vercel.app/",
-      codeLink: "https://github.com/AngadSudan/Slugtera.git",
-      thumbnail:
-        "https://res.cloudinary.com/djy3ewpb8/image/upload/v1742118309/bu84uuq3hqwujwqxsmve.png",
-      tags: ["#mern", "#vibecoding", "#animation"],
     },
     {
       name: "Quizora",
